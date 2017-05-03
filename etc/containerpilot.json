@@ -9,7 +9,8 @@
       "port": 8500,
       "health": ["/usr/local/bin/swarmdind-manage", "health"],
       "poll": 10,
-      "ttl": 25
+      "ttl": 25,
+      "tags": [ "{{ .HOSTNAME }}-DIND" ]
     }
   ]
 }

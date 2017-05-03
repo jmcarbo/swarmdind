@@ -2,13 +2,15 @@ version: "3"
 
 services:
   swarmdind:
-    image: jmcarbo/swarmdind
+    image: jmcarbo/swarmdind:latest
     environment:
       - EXTRA_FLAGS= --network apps --network-alias dinduser
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - consul-net
+    deploy:
+      replicas: 1
 
 networks:
   consul-net:
